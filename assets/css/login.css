@@ -1,0 +1,59 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #5ea0f1;
+}
+
+#logo {
+    margin: 20px 0 0 240px;
+}
+
+.box {
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 26px;
+
+}
+
+/* 表单 */
+form {
+    margin: 0 30px;
+}
+
+form a {
+    float: right;
+}
+
+/* 字体图标 */
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    top: 11px;
+    left: 8px;
+}
+
+.layui-input {
+    padding-left: 28px;
+}
+
+/* 默认 认注册的盒子隐藏*/
+.register {
+    display: none;
+}
