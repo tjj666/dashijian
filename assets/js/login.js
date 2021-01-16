@@ -45,9 +45,9 @@ form.verify({
     // 是对象形式的
     // 键(验证规则):值(验证方法)
     // 验证用户名2~10位
-    user: [/^a-zA-Z0-9{2,10}$/, '用户名只能是数字字母,且6~12位'],
+    user: [/^[a-zA-Z0-9]{2,10}$/, '用户名只能是数字字母,且2~10位'],
     // 验证密码 长度6~2位 \S表示非空格 除了空格以外所有的包括数字 字母 下划线等 
-    len:[/^\S{6,12}&/,'密码长度6~12位且不能有空格'],
+    len:[/^\S{6,12}$/,'密码长度6~12位且不能有空格'],
     // 判断确认密码
     // val表示输入框的值 val形参 表示谁用这个验证规则 val就代表谁的值 在这里表示确认密码
     same: function (val) {
@@ -74,10 +74,10 @@ $(".login form").on('submit', function (e) {
             layer.msg(res.message);
             // 登录成功
             if (res.status === 0) {
-                // 保存token 
+                // 数据里面返回的token 保存进之前保存的token 
                 localStorage.setItem('token', res.token);
                 // 跳转到首页面
-                location.href='/index.html'
+                location.href = './index.html';
             }
         }
     })
