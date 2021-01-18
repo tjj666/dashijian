@@ -26,8 +26,14 @@ $.ajaxPrefilter(function (option) {
         if (res&&res.status===1&&res.message==='身份认证失败') {
             // 清除过期token
             localStorage.removeItem('token');
-            // 跳转页面
-            location.href = '/login.html';
+            // index页面跳转登录页面(两者属于平级关系)location对象包含url路径
+            if (location.pathname==='/index.html') {//pathname地址栏路径
+                location.href = './login.html';
+            } else {
+                // 小页面跳转父页面
+            window.parent.location.href = '../login.html';
+            }
+            
         }
         // 其他错误 比如用户名错误
         if (res && res.status === 1) {
